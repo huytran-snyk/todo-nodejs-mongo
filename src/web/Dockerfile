@@ -9,7 +9,7 @@ COPY . .
 RUN npm ci
 RUN npm run build
 
-FROM nginx:alpine
+FROM nginx:1.31.10-alpine3.24
 
 WORKDIR /usr/share/nginx/html
 COPY --from=build /app/dist .
